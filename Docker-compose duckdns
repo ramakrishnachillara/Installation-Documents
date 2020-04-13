@@ -1,0 +1,13 @@
+version: "2"
+services:
+  duckdns:
+    image: linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=988 #optional
+      - PGID=100 #optional
+      - TZ=Asia/Calcutta
+      - SUBDOMAINS=dashmachine,saddamh
+      - TOKEN=3333bd0f-c6eb-48e9-8e61-2d3f8ef37038
+      - LOG_FILE=true #optional
+    restart: unless-stopped

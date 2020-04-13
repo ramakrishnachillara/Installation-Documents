@@ -1,0 +1,11 @@
+version: '2'
+services:
+  dashmachine:
+    image: rmountjoy/dashmachine:latest
+    ports:
+      - 81:5000
+    volumes:
+      - dashmachine_data:/dashmachine_data
+    restart: unless-stopped 
+   
+  

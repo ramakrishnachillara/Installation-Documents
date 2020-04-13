@@ -1,0 +1,25 @@
+version: "2"
+services:
+  l3mon:
+    image: iojs
+    container_name: l3mon
+    ports:
+      - 22533:22533
+    volumes:
+      - l3mon_data:/l3mon_data
+    restart: unless-stopped
+volumes:
+  l3mon_data:
+
+    
+
+  curl -sL https://rpm.nodesource.com/setup_13.x | bash -
+node --version
+
+https://www.youtube.com/watch?reload=9&v=DDIZTABABzs
+
+Hash5:
+7a41f726b70367f7aff8f08cd85119b0
+
+bind Two APK's
+https://www.youtube.com/watch?v=bG_zEFvGcwg

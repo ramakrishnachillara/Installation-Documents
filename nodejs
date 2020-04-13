@@ -1,0 +1,17 @@
+version: "2"
+services:
+  node:
+    image: "node:8"
+    user: "node"
+    working_dir: /l3mon_data/l3mon/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - l3mon_data:/l3mon_data/l3mon/app
+    expose:
+      - "8081"
+  restart: unless-stopped
+
+  volumes:
+    l3mon_data:
+  command: "npm start"

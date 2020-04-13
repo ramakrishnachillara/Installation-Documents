@@ -1,0 +1,12 @@
+version: "2"
+services:
+  spy01:
+    image: ubuntu/latest:spy-v1
+    container_name: spy01
+    ports:
+      - 83:22533
+    volumes:
+      - spy01:/spy01
+    restart: unless-stopped
+volumes:
+    spy01:

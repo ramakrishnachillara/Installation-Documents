@@ -1,0 +1,16 @@
+#cloud-config
+ssh_authorized_keys:
+    - AAAAB3NzaC1yc2EAAAABJQAAAQEArMvkx7L9dNTcK7hx/zlOnd7hYBkEObB3aY/SVtilrlFkuppWGRW4HrzOuG0Z7eBItV7hZ01716VrYIuIXNv1nPEuPvSAq0uu6LI4MvjRpX9MIXm9rP9dHE/wcxM1t3FryK9B+dDa4F3azqtruAJFnvC8DzL686BT6z73zNJETz64PKDoHUEEQzB+LHfzozDGAuUL20rLgrFuPFEwT2Lhym05epiFLLmYBJCnH11oH6lR5Hj/zeMjPVtbJGlGX1GHjhii+dFofX4rxEb0PlzJXxzmPz/ICyifEjdb1W5wBt1dwpkN1NsayLXUv7OsX9mQ8KZeB8t9sYpQLwwNuqfudQ==
+hostname: rancheros
+rancher:
+    network:
+        interfaces:
+            eth0:
+                address: 192.168.1.99
+                gateway: 192.168.1.1
+                mtu: 1500
+                dhcp: false
+    dns:
+        nameservers:
+            - 8.8.8.8
+            - 8.8.4.4    
