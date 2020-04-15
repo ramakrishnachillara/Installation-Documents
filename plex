@@ -1,0 +1,21 @@
+---
+version: "2.1"
+services:
+  plex:
+    image: linuxserver/plex
+    container_name: plexserver
+    network_mode: host
+    environment:
+      - PUID=998
+      - PGID=100
+      - VERSION=docker
+      - UMASK_SET=022 #optional
+      - PLEX_CLAIM= #optional
+    ports:
+      - 32400:32400
+    volumes:
+      - /Config/Downloads:/plex
+      
+    restart: unless-stopped
+
+    

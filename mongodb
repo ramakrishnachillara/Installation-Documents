@@ -1,0 +1,26 @@
+---
+version: "2.1"
+services:
+  mongodbserver:
+    image: mongo
+    container_name: mongodbserver
+    network_mode: bridge
+   
+    ports:
+      - 27017:27017
+      - 27019:27019
+    volumes:
+      - /Config/mongodbserver:/var/lib/mongodb
+    restart: unless-stopped
+
+
+    
+    centos7
+    /home/user/database:/var/lib/mongodb/data
+    mongodb://mongodb0.example.com:27017
+
+     environment:
+      - MONGODB_ADMIN_PASSWORD="Passwrod@123"
+      - MONGODB_USER="admin"
+      - MONGODB_PASSWORD="Passwrod@123"
+      - MONGODB_DATABASE="mongodb://172.17.0.8:27017"

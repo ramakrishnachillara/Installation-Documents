@@ -11,7 +11,7 @@ services:
       - UMASK_SET=022
       - WEBUI_PORT=8080
     volumes:
-      - /Config/downloads:/qbittorrent
+      - /Config/Downloads:/qbittorrent
     ports:
       - 6881:6881
       - 6881:6881/udp

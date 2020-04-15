@@ -1,0 +1,29 @@
+version: '2'
+services:
+  mongo-express:
+    image: mongo-express
+    environment:
+      - ME_CONFIG_EDITORTHEME="default" 
+      - ME_CONFIG_MONGODB_SERVER=192.168.1.99
+      - ME_CONFIG_BASICAUTH_USERNAME=admin # Weblogin username
+      - ME_CONFIG_BASICAUTH_PASSWORD=amma  # Weblogin password 
+    ports:
+      - 8081:8081
+    
+
+
+docker run -it --rm \
+    --network web_default \
+    --name  \
+    -p 8081:8081 \
+    -e ME_CONFIG_OPTIONS_EDITORTHEME="ambiance" \
+    -e ME_CONFIG_MONGODB_SERVER="web_db_1" \
+    -e ME_CONFIG_BASICAUTH_USERNAME="user" \
+    -e ME_CONFIG_BASICAUTH_PASSWORD="fairly long password" \
+    mongo-express
+
+
+  - ME_CONFIG_MONGODB_ENABLE_ADMIN="true"
+      - ME_CONFIG_BASICAUTH_USERNAME="admin"
+      - ME_CONFIG_BASICAUTH_PASSWORD="Passwrod@123"
+    mongodb://192.168.1.99:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false
