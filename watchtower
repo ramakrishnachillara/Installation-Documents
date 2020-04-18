@@ -1,0 +1,45 @@
+version: "2.1"
+services:
+  watchtower:
+    image: v2tec/watchtower
+    ports:
+      - "3443:3443"
+      - "3080:3080"
+  
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /Config/watchtower/config.json:/config.json
+    command: --interval 30
+
+
+
+
+
+
+
+
+
+docker run -d \
+  --name watchtower \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e WATCHTOWER_NOTIFICATIONS=email \
+  -e WATCHTOWER_NOTIFICATION_EMAIL_FROM=fromaddress@gmail.com \
+  -e WATCHTOWER_NOTIFICATION_EMAIL_TO=toaddress@gmail.com \
+  -e WATCHTOWER_NOTIFICATION_EMAIL_SERVER=smtp.gmail.com \
+  -e WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=fromaddress@gmail.com \
+  -e WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=app_password \
+  v2tec/watchtower
+
+  version: "3"
+services:
+  cavo:
+    image: index.docker.io/<org>/<image>:<tag>
+    ports:
+      - "443:3443"
+      - "80:3080"
+  watchtower:
+    image: v2tec/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    command: --interval 30
